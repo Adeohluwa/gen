@@ -2,7 +2,7 @@ let doc = """
 Gen.
 
 Usage:
-  gen new <project>
+  gen newapp <project>...
   gen (-h | --help)
   gen (-v | --version)
 
@@ -27,12 +27,12 @@ Adeoluwa Adejumo
 """)
 
 
-if args["new"]: 
+if args["newapp"]: 
   for name in @(args["<project>"]): 
     blue("Generating folder structure for your project... $#" % name)
    
     # Initial file
-    #copyFile     "templates/app.nim",     &"{name}/app.nim"
+    #copyFile   "templates/app.nim", &"{name}/app.nim"
     #copyFile    "templates/app.nim",&"{name}/app.nimble"
     #copyFile    "templates/app.nim",&"{name}/README.md"
     #copyFile    "templates/app.nim",&"{name}/LICENSE.txt"
@@ -44,7 +44,7 @@ if args["new"]:
     # MVC folder
     createDir  &"{name}/src/models"
     createDir  &"{name}/src/routes"
-    createDir &"{name}/src/views"
+    createDir  &"{name}/src/views"
 
 
 

@@ -1,4 +1,4 @@
 $ nimble install gen
 
 
-$ gen new project-name
+$ gen newapp project-name

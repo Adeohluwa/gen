@@ -12,9 +12,9 @@ services:
   db:
     image: postgres
     environment:
-      POSTGRES_DB=mule:
-      POSTGRES_USER=ade:
-      POSTGRES_PASSWORD=pass:
+      POSTGRES_DB=dbname:
+      POSTGRES_USER=username:
+      POSTGRES_PASSWORD=password:
     volumes:
       - ./pgdata:/var/lib/postgresql/data
     ports:

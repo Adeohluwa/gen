@@ -39,8 +39,11 @@ if args["newapp"]:
     blue(&"Generating folder structure for {name}...")
    
     # Initial files
-    let files = @["app.nimble", "README.md", "LICENSE.txt"]
+    let configFiles = @["app.nimble", "README.md", "LICENSE.txt"]
    
+    #Nim Files
+    let nimFiles = @["app.nm"]
+
     # MVC folder
     let mvcDir = @["src/models", "src/routes", "src/views"]
     
@@ -51,19 +54,29 @@ if args["newapp"]:
     let testDir = @[&"tests"]
     let allDirs = mvcDir & pubDir & testDir
 
+    proc run(cmd: string) =
+      discard execShellCmd cmd
+
     # start new progress bar
     var bar = newProgressBar()
     bar.start()
+   
+    # create directories
+    for eachDir in allDirs:
+      createDir &"{name}/{eachDir}"
+     
+    # write config files
+    for eachFile in configFiles:
+      run &"cp $(nimble path gen)/templates/{eachFile} ./{name}/{eachFile}"
+      run &"cp $(nimble path gen)/templates/docker/* ./{name}"
     
-    for i in 1..100:
-      for eachDir in allDirs:
-        createDir &"{name}/{eachDir}"
-      
-      for eachFile in files:
-        discard execShellCmd &"cp $(nimble path gen)/templates/{eachFile} ./{name}/{eachFile}"
-        discard execShellCmd &"cp $(nimble path gen)/templates/docker/* ./{name}"
-        #discard execShellCmd &"cd {name} && nimble install"
+    # write nim files
+    for eachFile in nimFiles:
+      run &"cp $(nimble path gen)/templates/{eachFile} ./{name}/src/app.nim"
+
+    for i in 1..100:  
       sleep(30)
       bar.increment()
     
     bar.finish()
+    run &"cd {name} && nimble run app"

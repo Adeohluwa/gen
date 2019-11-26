@@ -31,8 +31,8 @@ Usage
 
 WIP
 ---
- - [ ] Create jester sample route files
- - [ ] Automatically install commonly used modules
+ - [x] Create jester sample route files
+ - [x] Automatically install commonly used modules
 
 Contributions
 -------------

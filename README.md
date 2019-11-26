@@ -1,4 +1,4 @@
-#Sumec Generator 
+Generator 
 ----------------------------------------------
 
 ### The Boilerplate generator for Nim Lang's Jester web framework that is brain dead easy to use

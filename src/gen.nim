@@ -11,7 +11,7 @@ let doc = """
 Gen.
 
 Usage:
-  gen newapp <project>...
+  gen newapp <projectname>...
   gen (-h | --help)
   gen (-v | --version)
 
@@ -35,27 +35,20 @@ Author: Adeoluwa Adejumo
 
 
 if args["newapp"]: 
-  for name in @(args["<project>"]): 
+  for name in @(args["<projectname>"]): 
     blue(&"Generating folder structure for {name}...")
    
-    # Initial file
-    let files = @[&"{name}/app.nim", 
-    &"{name}/app.nimble",
-    &"{name}/README.md",
-    &"{name}/LICENSE.txt",
-    &"{name}/.gitignore",
-    &"{name}/Dockerfile",
-    &"{name}/.docker-compose.yml"
-    ]
+    # Initial files
+    let files = @["app.nimble", "README.md", "LICENSE.txt"]
    
     # MVC folder
-    let mvcDir = @[&"{name}/src/models", &"{name}/src/routes", &"{name}/src/views"]
+    let mvcDir = @["src/models", "src/routes", "src/views"]
     
     # Public directory
-    let pubDir = @[ &"{name}/src/public/img", &"{name}/src/public/css", &"{name}/src/public/js"]
+    let pubDir = @[ "src/public/img", "src/public/css", "src/public/js"]
  
     # Tests
-    let testDir = @[&"{name}/tests"]
+    let testDir = @[&"tests"]
     let allDirs = mvcDir & pubDir & testDir
 
     # start new progress bar
@@ -64,7 +57,12 @@ if args["newapp"]:
     
     for i in 1..100:
       for eachDir in allDirs:
-        createDir eachDir
+        createDir &"{name}/{eachDir}"
+      
+      for eachFile in files:
+        discard execShellCmd &"cp $(nimble path gen)/templates/{eachFile} ./{name}/{eachFile}"
+        discard execShellCmd &"cp $(nimble path gen)/templates/docker/* ./{name}"
+        #discard execShellCmd &"cd {name} && nimble install"
       sleep(30)
       bar.increment()
     

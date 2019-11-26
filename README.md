@@ -1,7 +1,7 @@
-Boilerplate Generator For Jester Web Framework
+             # Sumec Generator 
 ----------------------------------------------
 
-Gen jester boilerplate generator is brain dead easy to use
+### The Boilerplate generator for Nim Lang's Jester web framework that is brain dead easy to use
 
 
 
@@ -20,20 +20,21 @@ Installation
 ------------
 
  ``$ nimble install gen``
-               OR
- ``$ nimble install https://github.com/Adeohluwa/gen``
-
+               
 
 
 Usage
 -----
 
- ``$ gen newapp projectname``
+ ``$ gen newapp <projectname>``
 
 
+WIP
+---
+[ ] Create jester sample route files
+[ ] Automatically install commonly used modules
 
-How to Contribute
------------------
+Contributions
+-------------
  Still learning too, I would love any contribution which would make this project better.
-
  Feel free to fork this repo, create a pull request and it will be reviewed and merged!

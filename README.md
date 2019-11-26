@@ -1,4 +1,4 @@
-             # Sumec Generator 
+#Sumec Generator 
 ----------------------------------------------
 
 ### The Boilerplate generator for Nim Lang's Jester web framework that is brain dead easy to use
@@ -31,8 +31,8 @@ Usage
 
 WIP
 ---
-[ ] Create jester sample route files
-[ ] Automatically install commonly used modules
+ - [ ] Create jester sample route files
+ - [ ] Automatically install commonly used modules
 
 Contributions
 -------------

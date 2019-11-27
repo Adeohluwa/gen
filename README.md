@@ -26,7 +26,7 @@ Installation
 Usage
 -----
 
- ``$ gen newapp <projectname>``
+ ``$ gen new:app <projectname>``
 
 
 WIP

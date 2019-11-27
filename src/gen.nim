@@ -11,7 +11,7 @@ let doc = """
 Gen.
 
 Usage:
-  gen newapp <projectname>...
+  gen new:app <projectname>...
   gen (-h | --help)
   gen (-v | --version)
 
@@ -34,7 +34,7 @@ Author: Adeoluwa Adejumo
 
 
 
-if args["newapp"]: 
+if args["new:app"]: 
   for name in @(args["<projectname>"]): 
     blue(&"Generating folder structure for {name}...")
    

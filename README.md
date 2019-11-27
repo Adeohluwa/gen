@@ -33,8 +33,11 @@ WIP
 ---
  - [x] Create jester sample route files
  - [x] Automatically install commonly used modules
+ - [ ] Generate controllers
+ - [ ] Generate models
+ - [ ] Generate API
 
 Contributions
 -------------
- Still learning too, I would love any contribution which would make this project better.
+ Still learning too, I would love any contribution and or suggestions which would make this project better.
  Feel free to fork this repo, create a pull request and it will be reviewed and merged!

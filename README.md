@@ -1,7 +1,7 @@
 Generator 
 ----------------------------------------------
 
-### The Boilerplate generator for Nim Lang's Jester web framework that is brain dead easy to use
+ Scaffolding tool for Nim Lang's Jester web framework that is brain dead easy to use
 
 
 
@@ -26,14 +26,7 @@ Installation
 Usage
 -----
 
- ``$ gen new:app <project>``
- 
- ``$ gen new:api <api>``
- 
- ``$ gen new:route <route>``
- 
- ``$ gen new:license <license>``
-
+![](usage.png)
 
 WIP
 ---

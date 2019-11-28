@@ -26,7 +26,7 @@ Installation
 Usage
 -----
 
-![](usage.png =480x320)
+<img src="usage.png" width="480" height="320"/>
 
 WIP
 ---

@@ -8,7 +8,7 @@ import commands/[app,api,route,license]
 
 
 let doc = """
-Gen.
+Gen - Scaffolding tool for Jester web framework.
 
 Usage:
   gen new:app <project>...

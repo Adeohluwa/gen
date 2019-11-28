@@ -3,7 +3,7 @@ import strformat
 import fab
 import docopt
 import progress
-import commands/[app,api]
+import commands/[app,api,route,license]
 
 
 
@@ -11,10 +11,10 @@ let doc = """
 Gen.
 
 Usage:
-  gen new:app <projectname>...
-  gen new:api <apiname>
-  gen new:route <routename>
-  gen new:license <licensename>
+  gen new:app <project>...
+  gen new:api <api>
+  gen new:route <route>
+  gen new:license <license>
   gen (-h | --help)
   gen (-v | --version)
 
@@ -41,3 +41,9 @@ if args["new:app"]:
   
 if args["new:api"]:
   genAPI(args)
+
+if args["new:route"]:
+  genRoute(args)
+
+if args["new:license"]:
+  genLicense(args)

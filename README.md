@@ -26,8 +26,10 @@ Installation
 Usage
 -----
 
- ``$ gen new:app <projectname>``
- ``$ gen new:api <apiname>``
+ ``$ gen new:app <project>``
+ ``$ gen new:api <api>``
+ ``$ gen new:route <route>``
+ ``$ gen new:license <license>``
 
 
 WIP

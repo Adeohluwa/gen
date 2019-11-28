@@ -8,8 +8,5 @@ before_install:
   - docker ps
   - docker run -d nimlang/nim /bin/bash -c "ls"
 
-install:
-  - docker-compose build --build-arg NIM_VERSION=$NIM_VERSION
-
 script:
   - nim c -r src/gen.nim

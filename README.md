@@ -27,8 +27,11 @@ Usage
 -----
 
  ``$ gen new:app <project>``
+ 
  ``$ gen new:api <api>``
+ 
  ``$ gen new:route <route>``
+ 
  ``$ gen new:license <license>``
 
 

@@ -26,7 +26,7 @@ Installation
 Usage
 -----
 
-![](usage.png)
+![](usage.png =480x320)
 
 WIP
 ---

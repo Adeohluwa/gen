@@ -26,7 +26,7 @@ Installation
 Usage
 -----
 
-<img src="usage.png" width="480" height="320"/>
+<img src="usage.png" width="640" height="480"/>
 
 WIP
 ---

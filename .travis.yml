@@ -1,0 +1,13 @@
+language: minimal
+
+services:
+  - docker
+
+env:
+  - NIM_VERSION=1.0.0
+
+install:
+  - docker-compose build --build-arg NIM_VERSION=$NIM_VERSION
+
+script:
+  - docker-compose run --rm nimble run gen

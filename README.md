@@ -1,7 +1,8 @@
 Generator 
 ----------------------------------------------
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](./LICENSE.txt)
-
+[![Build Status] (https://travis-ci.org/Adeohluwa/gen.svg?branch=master)] (https://travis-ci.org/Adeohluwa/gen)
+ 
  Scaffolding tool for Nim Lang's Jester web framework that is brain dead easy to use
 
 

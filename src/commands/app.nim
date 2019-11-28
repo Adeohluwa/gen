@@ -7,13 +7,13 @@ import docopt
 import progress
 
 proc genApp*(args: Table[system.string, docopt.Value]) =
-  for name in @(args["<projectname>"]):
+  for name in @(args["<project>"]):
     #var projectDir = getCurrentDir(),  &"/{name}"
     #if (dirExists projectDir):
     #  echo projectDir
       # red(&"{name} already exist!")
 
-    blue(&"Generating folder structure for {name}...")
+    blue(&"Generating folder structure for [{name}]...")
    
     # Initial files
     let configFiles = @["app.nimble", "README.md", "LICENSE.txt"]

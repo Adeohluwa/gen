@@ -1,13 +1,14 @@
-language: minimal
-
 services:
   - docker
 
-env:
-  - NIM_VERSION=1.0.0
+before_install:
+  - docker pull nimlang/latest
+  - docker images
+  - docker ps
+  - docker run -d nimlang/nim /bin/bash -c "ls"
 
 install:
   - docker-compose build --build-arg NIM_VERSION=$NIM_VERSION
 
 script:
-  - docker-compose run --rm nimble run gen
+  - nim c -r src/gen.nim

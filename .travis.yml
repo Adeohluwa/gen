@@ -1,8 +1,9 @@
+language: minimal
 services:
   - docker
 
 before_install:
-  - docker pull nimlang/latest
+  - docker pull nimlang/nim:latest
   - docker images
   - docker ps
   - docker run -d nimlang/nim /bin/bash -c "ls"

@@ -6,7 +6,7 @@ import fab
 import docopt
 import progress
 
-proc createApp*(args: Table[system.string, docopt.Value]) =
+proc genApp*(args: Table[system.string, docopt.Value]) =
   for name in @(args["<projectname>"]):
     #var projectDir = getCurrentDir(),  &"/{name}"
     #if (dirExists projectDir):

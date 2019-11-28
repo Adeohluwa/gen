@@ -1,5 +1,6 @@
 Generator 
 ----------------------------------------------
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue)](./LICENSE.txt)
 
  Scaffolding tool for Nim Lang's Jester web framework that is brain dead easy to use
 

@@ -1,6 +1,5 @@
 import os
 import strformat
-import sequtils
 import fab
 import docopt
 import progress
@@ -13,7 +12,9 @@ Gen.
 
 Usage:
   gen new:app <projectname>...
-  gen new:api <projectname>
+  gen new:api <apiname>
+  gen new:route <routename>
+  gen new:license <licensename>
   gen (-h | --help)
   gen (-v | --version)
 
@@ -27,11 +28,10 @@ Options:
 let args = docopt(
 doc,
 version = """
-Gen 
+Gen ©2019 
 Version: 0.1.0
 Desc: Jester boilerplate generator
 Author: Adeoluwa Adejumo
-© 2019
 """)
 
 

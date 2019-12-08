@@ -34,7 +34,7 @@ let args = docopt(
 doc,
 version = """
 Gen ©2019 
-Version: 0.4.0
+Version: 0.6.0
 Desc: Jester boilerplate generator
 Author: Adeoluwa Adejumo
 """)

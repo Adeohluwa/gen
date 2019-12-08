@@ -3,7 +3,7 @@ import strformat
 import fab
 import docopt
 import progress
-import commands/[app,api,route,license]
+import commands/[app,api,route,license,readme]
 
 
 

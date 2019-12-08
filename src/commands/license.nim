@@ -21,6 +21,8 @@ proc genLicense*(args: Table[system.string, docopt.Value]) =
       
       of "gnugpl":
         exec &"cp $(nimble path gen)/templates/license/gnugpl3.txt ./License.txt"
-
+      of "ppl":
+        exec &"cp $(nimble path gen)/templates/license/ppl.txt ./License.txt"
+      
       else:
         red "sorry i don't have that license :("

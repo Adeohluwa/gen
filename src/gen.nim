@@ -51,4 +51,4 @@ if args["new:license"]:
   genLicense(args)
 
 if args["new:readme"]:
-  genReadMe(args)
+  genReadMe()

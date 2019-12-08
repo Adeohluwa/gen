@@ -16,7 +16,7 @@ proc genApp*(args: Table[system.string, docopt.Value]) =
     blue(&"Generating folder structure for [{name}]...")
    
     # Initial files
-    let configFiles = @["app.nimble", "README.md", "LICENSE.txt"]
+    let configFiles = @["app.nimble"]
    
     #Nim Files
     let nimFiles = @["app.nm"]
@@ -45,7 +45,6 @@ proc genApp*(args: Table[system.string, docopt.Value]) =
     # write config files
     for eachFile in configFiles:
       run &"cp $(nimble path gen)/templates/{eachFile} ./{name}/{eachFile}"
-      run &"cp $(nimble path gen)/templates/docker/* ./{name}"
     
     # write nim files
     for eachFile in nimFiles:

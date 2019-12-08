@@ -12,13 +12,15 @@ Gen - Scaffolding tool for Jester web framework.
 
 Usage:
   gen new:app <project>...
-  gen new:api <api>
-  gen new:route <route>
-  gen new:license <license>
+  gen new:api <api>...
+  gen new:route <route>...
+  gen new:license <license>...
+  gen new:readme
   gen (-h | --help)
   gen (-v | --version)
 
 Options:
+  <license>        MIT | Apache | GnuGPL 
   -h --help        Show this screen.
   -v --version     Show version.
 """
@@ -47,3 +49,6 @@ if args["new:route"]:
 
 if args["new:license"]:
   genLicense(args)
+
+if args["new:readme"]:
+  genReadMe(args)

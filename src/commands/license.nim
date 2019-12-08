@@ -5,9 +5,8 @@ import fab
 import docopt
 import run
 
-proc genLicense*(args: Table[system.string, docopt.Value]) =
-  
 
+proc genLicense*(args: Table[system.string, docopt.Value]) =
   for license in @(args["<license>"]):
     case license.toLower():
       of "mit":
@@ -21,6 +20,7 @@ proc genLicense*(args: Table[system.string, docopt.Value]) =
       
       of "gnugpl":
         exec &"cp $(nimble path gen)/templates/license/gnugpl3.txt ./License.txt"
+
       of "ppl":
         exec &"cp $(nimble path gen)/templates/license/ppl.txt ./License.txt"
       

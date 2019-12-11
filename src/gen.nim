@@ -13,12 +13,17 @@ Gen - Scaffolding tool for Jester web framework.
 Usage:
   gen new:app <project>...
   gen new:api <api>...
+  
   gen new:model <model>...
   gen new:route <route>...
   gen new:controller <controller>...
+  gen new:test <file>...
+  
   gen new:license <license>...
   gen new:dockerfile
   gen new:readme
+  gen new:configs
+
   gen (-h | --help)
   gen (-v | --version)
 
@@ -56,6 +61,9 @@ if args["new:route"]:
 if args["new:controller"]:
   genController(args)
 
+if args["new:test"]:
+  genTest(args)
+
 if args["new:dockerfile"]:
   genDocker()
 
@@ -64,3 +72,6 @@ if args["new:license"]:
 
 if args["new:readme"]:
   genReadMe()
+
+if args["new:configs"]:
+  genConfigs()

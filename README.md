@@ -34,9 +34,12 @@ WIP
 ---
  - [x] Create jester sample route files
  - [x] Automatically install commonly used modules
+ - [x] Generate nim.cfg, .env, .gitignore config files 
+ - [x] Generate MIT | Apache | Mozilla | GnuGPL3 | PPL license
  - [ ] Generate controllers
  - [ ] Generate models
  - [ ] Generate API
+ - [ ] Generate Tests
 
 Contributions
 -------------

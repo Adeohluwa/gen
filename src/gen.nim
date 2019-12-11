@@ -3,7 +3,7 @@ import strformat
 import fab
 import docopt
 import progress
-import commands/[app,api,model,route,controller,license,readme,docker]
+import commands/[app,api,model,route,controller,license,readme,docker,test,configs]
 
 
 
@@ -13,17 +13,14 @@ Gen - Scaffolding tool for Jester web framework.
 Usage:
   gen new:app <project>...
   gen new:api <api>...
-  
   gen new:model <model>...
   gen new:route <route>...
   gen new:controller <controller>...
   gen new:test <file>...
-  
   gen new:license <license>...
   gen new:dockerfile
   gen new:readme
   gen new:configs
-
   gen (-h | --help)
   gen (-v | --version)
 
@@ -62,7 +59,7 @@ if args["new:controller"]:
   genController(args)
 
 if args["new:test"]:
-  genTest(args)
+  genTest()
 
 if args["new:dockerfile"]:
   genDocker()

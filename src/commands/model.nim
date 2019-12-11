@@ -6,4 +6,4 @@ import docopt
 import run
 
 proc genModel*(args: Table[system.string, docopt.Value]) =
-  blue "WIP"
+  exec &"cp $(nimble path gen)/templates/models/models.nim models.nim"

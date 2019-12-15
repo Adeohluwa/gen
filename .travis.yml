@@ -2,8 +2,8 @@ language: minimal
 services:
 
 before_install:
-    - apt-get update && apt-get upgrade
-    - apt-get install -y nim
+    - sudo apt-get update && apt-get upgrade
+    - sudo apt-get install -y nim
 
 
 script:

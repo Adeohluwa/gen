@@ -1,12 +1,8 @@
 language: minimal
 services:
-  - docker
 
 before_install:
-  - docker pull nimlang/nim:latest
-  - docker images
-  - docker ps
-  - docker run -d nimlang/nim /bin/bash -c "ls"
+    - curl https://nim-lang.org/choosenim/init.sh -sSf | sh
 
 script:
   - nim c -r src/gen.nim

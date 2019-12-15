@@ -2,7 +2,10 @@ language: minimal
 services:
 
 before_install:
-    - curl https://nim-lang.org/choosenim/init.sh -sSf | sh
+    - apt-get update && apt-get upgrade
+    - apt-get install -y nim
+
 
 script:
-  - nim c -r src/gen.nim
+  - git clone "https://github.com/Adeohluwa/gen"
+  - cd gen && nimble install

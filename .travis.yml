@@ -1,11 +1,14 @@
 language: minimal
 services:
+    - docker
 
 before_install:
     - sudo apt-get update && sudo apt-get upgrade
-    - sudo apt-get install -y nim
-
+    - sudo apt-get install -y nim git
+    - docker pull nimlang/nim
+    - docker ps
+    - git clone "https://github.com/Adeohluwa/gen"
+    - cd gen
 
 script:
-  - git clone "https://github.com/Adeohluwa/gen"
-  - cd gen && nimble install
+  - docker run --rm nimlang/nim /bin/sh -c "nim c -r src/gen.nim"

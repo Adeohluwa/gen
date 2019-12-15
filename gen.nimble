@@ -1,8 +1,8 @@
 # Package
 
-version       = "0.6.0"
+version       = "0.8.0"
 author        = "Adeoluwa Adejumo"
-description   = "A boilerplate generator for Nim Lang's Jester web framework"
+description   = "Ultimate Scaffolding Tool for building GUI/Web/CLI apps in Nim Lang."
 license       = "MIT"
 srcDir        = "src"
 binDir        = "bin"

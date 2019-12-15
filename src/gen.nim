@@ -11,12 +11,13 @@ let doc = """
 Gen - Scaffolding tool for Jester web framework.
 
 Usage:
-  gen new:app <project>...
-  gen new:api <api>...
-  gen new:model <model>...
-  gen new:route <route>...
-  gen new:controller <controller>...
-  gen new:test <file>...
+  gen jester:app <project>...
+  gen jester:api <api>...
+  gen jester:model <model>...
+  gen jester:route <route>...
+  gen jester:controller <controller>...
+  gen jester:test <file>...
+  gen nigui:app <project>...
   gen new:license <license>...
   gen new:dockerfile
   gen new:readme
@@ -25,7 +26,7 @@ Usage:
   gen (-v | --version)
 
 Options:
-  <license>      MIT | Apache | GnuGPL3 | PPL
+  <license>      MIT| Apache| GnuGPL3| Mozilla
   -h --help      Show this screen.
   -v --version   Show version.
 """
@@ -36,29 +37,29 @@ let args = docopt(
 doc,
 version = """
 Gen ©2019 
-Version: 0.6.0
-Desc: Jester boilerplate generator
+Version: 0.8.0
+Desc: The Ultimate Apps Scaffolding Tool for GUI/Web/CLI Apps
 Author: Adeoluwa Adejumo
 """)
 
 
 
-if args["new:app"]: 
+if args["jester:app"]: 
   genApp(args)
   
-if args["new:api"]:
+if args["jester:api"]:
   genAPI(args)
 
-if args["new:model"]:
+if args["jester:model"]:
   genModel(args)
 
-if args["new:route"]:
+if args["jester:route"]:
   genRoute(args)
 
-if args["new:controller"]:
+if args["jester:controller"]:
   genController(args)
 
-if args["new:test"]:
+if args["jester:test"]:
   genTest()
 
 if args["new:dockerfile"]:

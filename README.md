@@ -30,6 +30,7 @@ Usage
 -----
 ```bash
   $ gen jester:app Uber
+  $ gen new:license MIT
 ```
 
 WIP

@@ -8,7 +8,7 @@ import commands/[app,api,model,route,controller,license,readme,docker,test,confi
 
 
 let doc = """
-Gen - Scaffolding tool for Jester web framework.
+Gen - Scaffolding tool for GUI/Web/CLI apps.
 
 Usage:
   gen jester:app <project>...
@@ -18,6 +18,7 @@ Usage:
   gen jester:controller <controller>...
   gen jester:test <file>...
   gen nigui:app <project>...
+  gen cli:app <project>...
   gen new:license <license>...
   gen new:dockerfile
   gen new:readme
@@ -38,7 +39,7 @@ doc,
 version = """
 Gen ©2019 
 Version: 0.8.0
-Desc: The Ultimate Apps Scaffolding Tool for GUI/Web/CLI Apps
+Desc: Scaffolding tool for GUI/Web/CLI Apps
 Author: Adeoluwa Adejumo
 """)
 

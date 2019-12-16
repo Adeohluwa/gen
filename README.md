@@ -67,7 +67,7 @@ WIP
  - [x] Generate nim.cfg, .env, .gitignore config files 
  - [x] Generate MIT | Unilcense | Apache | Mozilla | GnuGPL3 license
  - [x] Generate Models
- - [ ] Generate Controllers
+ - [x] Generate Controllers
  - [ ] Generate API
  - [ ] Generate Tests
  - [ ] Scaffold GUI Apps

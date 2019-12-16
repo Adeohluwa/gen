@@ -21,13 +21,12 @@ Usage:
   gen cli:app <project>...
   gen new:license <license>...
   gen new:dockerfile
-  gen new:readme
   gen new:configs
   gen (-h | --help)
   gen (-v | --version)
 
 Options:
-  <license>      MIT| Apache| GnuGPL3| Mozilla
+  <license>      MIT |  Unilicense | Apache | Mozilla | GnuGPL3
   -h --help      Show this screen.
   -v --version   Show version.
 """
@@ -68,9 +67,6 @@ if args["new:dockerfile"]:
 
 if args["new:license"]:
   genLicense(args)
-
-if args["new:readme"]:
-  genReadMe()
 
 if args["new:configs"]:
   genConfigs()

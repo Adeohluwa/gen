@@ -22,7 +22,9 @@ Features
 Installation
 ------------
 
- ``$ nimble install gen``
+ ``
+ $ nimble install gen
+ ``
                
 
 
@@ -32,7 +34,6 @@ Usage
   $ gen jester:app Uber
   $ cd Uber/
   $ gen new:license MIT
-  $ gen new:readme
   $ gen new:configs
   $ ls 
   .
@@ -52,6 +53,10 @@ Usage
   |     |--- routes/
   |     |--- views/
   |--- tests
+  |--- .env
+  |--- .gitignore
+  |--- .travis.yml
+
 
 ```
 

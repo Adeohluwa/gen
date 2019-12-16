@@ -9,16 +9,16 @@ import run
 
 
 proc genApp*(args: Table[system.string, docopt.Value]) =
-  for name in @(args["<project>"]):
+  for project in @(args["<project>"]):
 
-    blue(&"Generating folder structure for {name}...")
+    blue(&"Generating folder structure for {project}...")
    
     # Initial files
-    let configFiles = @["app.nimble", "README.md"]
+    let configFiles = @["app.nimble"]
     #Nim Files
     let nimFiles = @["app.nm"]
     # MVC folder
-    let mvcDir = @["src/models", "src/routes", "src/views"]
+    let mvcDir = @["src/models", "src/routes", "src/views", "src/controllers"]
     # Public directory
     let pubDir = @[ "src/public/img", "src/public/css", "src/public/js"]
     # Tests
@@ -32,19 +32,20 @@ proc genApp*(args: Table[system.string, docopt.Value]) =
    
     # create directories
     for eachDir in allDirs:
-      createDir &"{name}/{eachDir}"
+      createDir &"{project}/{eachDir}"
      
     # write config files
     for eachFile in configFiles:
-      exec &"cp $(nimble path gen)/templates/{eachFile} ./{name}/{eachFile}"
+      exec &"cp $(nimble path gen)/templates/{eachFile} ./{project}/{eachFile}"
+      exec &"cp $(nimble path gen)/templates/readme.txt ./README.md"
     
     # write nim files
     for eachFile in nimFiles:
-      exec &"cp $(nimble path gen)/templates/{eachFile} ./{name}/src/app.nim"
+      exec &"cp $(nimble path gen)/templates/{eachFile} ./{project}/src/app.nim"
 
     for i in 1..100:  
       sleep(30)
       bar.increment()
     
     bar.finish()
-    exec &"cd {name} && nimble run app"
+    exec &"cd {project} && nimble run app"

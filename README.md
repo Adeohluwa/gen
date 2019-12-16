@@ -65,9 +65,9 @@ WIP
  - [x] Create jester sample route files
  - [x] Automatically install commonly used modules
  - [x] Generate nim.cfg, .env, .gitignore config files 
- - [x] Generate MIT | Apache | Mozilla | GnuGPL3 | PPL license
- - [ ] Generate controllers
- - [ ] Generate models
+ - [x] Generate MIT | Unilcense | Apache | Mozilla | GnuGPL3 license
+ - [x] Generate Models
+ - [ ] Generate Controllers
  - [ ] Generate API
  - [ ] Generate Tests
  - [ ] Scaffold GUI Apps
@@ -75,4 +75,4 @@ WIP
 
 Contributions
 -------------
- Appreciate all contributions and or suggestions which would make this project better. Feel free to fork this repo, create a pull request and it will be reviewed and merged!
+ Appreciate all contributions and suggestions which would make this a more useful application for all Nim Lang users. Feel free to fork this repo, create a pull request and it will be reviewed and merged!

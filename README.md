@@ -30,7 +30,29 @@ Usage
 -----
 ```bash
   $ gen jester:app Uber
+  $ cd Uber/
   $ gen new:license MIT
+  $ gen new:readme
+  $ gen new:configs
+  $ ls 
+  .
+  |--- License.txt
+  |--- README.md
+  |--- app.nimble
+  |--- bin/
+  |     |--- app
+  |--- nim.cfg
+  |--- src/
+  |     |--- app.nim
+  |     |--- models/
+  |     |--- public/
+  |            |--- css/
+  |            |--- img/
+  |            |--- js/
+  |     |--- routes/
+  |     |--- views/
+  |--- tests
+
 ```
 
 WIP

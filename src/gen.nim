@@ -26,7 +26,7 @@ Usage:
   gen (-v | --version)
 
 Options:
-  <license>      MIT |  Unilicense | Apache | Mozilla | GnuGPL3
+  <license>      MIT | BSD | Apache | GPL
   -h --help      Show this screen.
   -v --version   Show version.
 """

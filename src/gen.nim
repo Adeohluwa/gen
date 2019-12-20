@@ -3,7 +3,7 @@ import strformat
 import fab
 import docopt
 import progress
-import commands/[app,api,model,route,controller,license,readme,docker,test,configs]
+import commands/[app,api,model,route,controller,license,docker,test,configs]
 
 
 
@@ -60,7 +60,7 @@ if args["jester:controller"]:
   genController(args)
 
 if args["jester:test"]:
-  genTest()
+  genTest(args)
 
 if args["new:dockerfile"]:
   genDocker()

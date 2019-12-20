@@ -71,8 +71,8 @@ ROADMAP
  - [x] Generate MIT | BSD | CC0 | Apache | GPL3 license
  - [x] Generate Models
  - [x] Generate Controllers
+ - [x] Quickly Scaffold Tests
  - [ ] Generate API
- - [ ] Quickly Scaffold Tests
  - [ ] Scaffold GUI Apps
  - [ ] Scaffold CLI Apps
 

@@ -1,12 +1,55 @@
+import sugar
 import tables
 import strformat
 import strutils
 import fab
 import docopt
-import run
+
+
+
+let dotNim = () => writeFile(
+"nim.cfg",
+"""
+--threads:on
+-d:release
+"""
+)
+
+
+let dotTravis = () => writeFile(
+".travis.yml",
+"""
+"""
+)
+
+
+let dotEnv = () => writeFile(
+".env",
+"""
+DB_HOST=localhost      
+POSTGRES_DB=dbname            
+POSTGRES_USER=username
+POSTGRES_PASSWORD=password
+"""
+)
+
+
+let dotGitignore = () => writeFile(
+".gitignore",
+"""
+.env
+bin/
+src/models/<yourmodel>
+"""
+)
+
+
+
+
 
 proc genConfigs*() =
-  exec &"cp $(nimble path gen)/templates/configs/nim.cfg nim.cfg"
-  exec &"cp $(nimble path gen)/templates/configs/env.txt* .env"
-  exec &"cp $(nimble path gen)/templates/configs/travis.txt* .travis.yml"
-  exec &"cp $(nimble path gen)/templates/configs/gitignore.txt* .gitignore"
+  dotNim()
+  dotTravis()
+  dotEnv()
+  dotGitignore()
+

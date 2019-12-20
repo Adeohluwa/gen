@@ -12,7 +12,7 @@ bin           = @["gen"]
 
 # Dependencies
 
-requires "nim >= 1.0.2", "progress", "docopt", "fab"
+requires "nim >= 1.0.2", "progress", "docopt", "fab", "gara"
 
 # Tasks
 

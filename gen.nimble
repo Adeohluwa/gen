@@ -1,6 +1,6 @@
 # Package
 
-version       = "0.8.0"
+version       = "1.0.0"
 author        = "Adeoluwa Adejumo"
 description   = "Ultimate Scaffolding Tool for building GUI/Web/CLI apps in Nim Lang."
 license       = "MIT"

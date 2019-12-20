@@ -1,12 +1,14 @@
+import sugar
 import tables
 import strformat
 import strutils
 import fab
 import docopt
-import run
 
-proc genController*(args: Table[system.string, docopt.Value]) =
-  let text = """
+
+let writeController = (filename: string) => writeFile(
+&"{filename}",
+"""
 import norm/postgres
 
 proc createController(arg: type): type =
@@ -15,7 +17,11 @@ proc createController(arg: type): type =
       name:"sherluck holmes",
       age: "9"
     )
-    newUser.insert()"""
-  
+    newUser.insert()
+"""
+) 
+
+proc genController*(args: Table[system.string, docopt.Value]) =
+ 
   for filename in @(args["<controller>"]):
-    writeFile(&"{filename}",text)
+    writeController(&"{filename}")

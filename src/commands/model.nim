@@ -1,12 +1,18 @@
 import tables
+import sugar
 import strformat
 import strutils
 import fab
 import docopt
-import run
 
-proc genModel*(args: Table[system.string, docopt.Value]) =
-  let text = """
+
+
+
+
+let writeModel = (filename: string) => writeFile(
+&"{filename}"
+,
+"""
 import os
 import norm/postgres
 import dotenv
@@ -44,5 +50,11 @@ when isMainModule:
   withDb:
     createTables()
 """
+)
+
+
+
+
+proc genModel*(args: Table[system.string, docopt.Value]) =
   for filename in @(args["<model>"]):
-    writeFile(&"{filename}", text)
+    writeModel(filename)

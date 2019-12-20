@@ -3,7 +3,6 @@ import tables
 import strutils
 import strformat
 import fab
-import run
 import gara
 import docopt
 
@@ -999,5 +998,3 @@ proc genLicense*(args: Table[system.string, docopt.Value]) =
         ULC()
       _:
         FAIL()
-
-

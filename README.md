@@ -42,17 +42,20 @@ Usage
   |--- app.nimble
   |--- bin/
   |     |--- app
+  |
   |--- nim.cfg
   |--- src/
   |     |--- app.nim
   |     |--- models/
   |     |--- public/
-  |            |--- css/
-  |            |--- img/
-  |            |--- js/
+  |     |      |--- css/
+  |     |      |--- img/
+  |     |      |--- js/
+  |     |
   |     |--- routes/
   |     |--- views/
-  |--- tests
+  |
+  |--- tests/
   |--- .env
   |--- .gitignore
   |--- .travis.yml
@@ -60,16 +63,16 @@ Usage
 
 ```
 
-WIP
+ROADMAP
 ---
  - [x] Create jester sample route files
  - [x] Automatically install commonly used modules
  - [x] Generate nim.cfg, .env, .gitignore config files 
- - [x] Generate MIT | Unilcense | Apache | Mozilla | GnuGPL3 license
+ - [x] Generate MIT | BSD | CC0 | Apache | GPL3 license
  - [x] Generate Models
  - [x] Generate Controllers
  - [ ] Generate API
- - [ ] Generate Tests
+ - [ ] Quickly Scaffold Tests
  - [ ] Scaffold GUI Apps
  - [ ] Scaffold CLI Apps
 

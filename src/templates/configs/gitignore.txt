@@ -1,3 +1,0 @@
-.env
-bin/
-src/models/model

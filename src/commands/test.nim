@@ -9,8 +9,6 @@ import docopt
 
 
 
-let writeTest = (content: string) => writeFile("tRoutes.nim",content)
-
 var buildUp = """
 import unittest
 import httpclient
@@ -31,7 +29,6 @@ proc genTest*(args: Table[system.string, docopt.Value]) =
   for filename in @(args["<file>"]):
 
     let pattern = rex(r"get.+ | post.+ | put.+ | patch.+ |delete.+ ")
-
     let contents = readFile(filename)
     let matchObjects = contents.findAll(pattern)
 
@@ -41,4 +38,4 @@ proc genTest*(args: Table[system.string, docopt.Value]) =
       buildUp.add(&"\n\n\n  test \"{url}:\n      check:  client.{reqMethod}(\"{url}) == Http500") 
 
 
-    writeTest(buildUp)
+    writeFile("tRoutes.nim",buildUp)

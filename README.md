@@ -14,7 +14,7 @@ Features
 
  -   Get your app ready in no time.
  -   Simple MVC architecture (Models, Views, Routes)
- -   Prebundled with a .nimble, .env, nim.cfg file 
+ -   Bundled with app.nimble, nim.cfg, .env, .travis.yml configs 
  -   Integrate quickly with PostgreSQL via Norm.
 
 

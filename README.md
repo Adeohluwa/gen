@@ -75,7 +75,25 @@ ROADMAP
  - [ ] Generate API
  - [ ] Scaffold GUI Apps
  - [ ] Scaffold CLI Apps
+ 
+Built With
+----------
+- Docopts
+- Fab
+- Gara
+- Progress
+
+License
+-------
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/Adeohluwa/gen/blob/master/LICENSE.txt) file for details
 
 Contributions
 -------------
  Appreciate all contributions and suggestions which would make this a more useful application for all Nim Lang users. Feel free to fork this repo, create a pull request and it will be reviewed and merged!
+
+Acknowledgements
+----------------
+[@Yardanico](https://github.com/Yardanico).
+[@JuanCarlosPaco](https://github.com/juancarlospaco).
+[@Kobi](https://github.com/kobi2187).
+[@Libman](https://github.com/kobi2187).

@@ -12,7 +12,7 @@ import docopt
 
 
 let BSD = () => writeFile(
-"License.txt",
+"LICENSE",
 """
 Copyright (c) 2017, [Company]
 
@@ -42,7 +42,7 @@ USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.*
 
 
 let MIT = () => writeFile(
-"License.txt",
+"LICENSE",
 """
 MIT License
 
@@ -70,7 +70,7 @@ SOFTWARE.
 
 
 let APACHE = () => writeFile(
-"License.txt",
+"LICENSE",
 """
  Apache License
                            Version 2.0, January 2004
@@ -278,7 +278,7 @@ let APACHE = () => writeFile(
 
 
 let GPL = () => writeFile(
-"License.txt",
+"LICENSE",
 """
 GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
@@ -959,14 +959,14 @@ Public License instead of this License.  But first, please read
 
 
 let CC0 = () => writeFile(
-"License.txt",
+"LICENSE",
 """
 """
 )
 
 
 let ULC = () => writeFile(
-"License.txt",
+"LICENSE",
 """
 """
 )

@@ -20,7 +20,7 @@ before_script:
   - set -x
 
 script:
-  - nimble install 
+  - nimble install -y
 
 notifications:
   email: false # noisy

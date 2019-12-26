@@ -20,8 +20,7 @@ before_script:
   - set -x
 
 script:
-  - git clone https://github.com/Adeohluwa/gen.git
-  - cd gen && nimble install 
+  - nimble install 
 
 notifications:
   email: false # noisy

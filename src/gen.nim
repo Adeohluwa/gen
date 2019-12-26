@@ -51,9 +51,6 @@ if args["jester:api"]:
 if args["jester:model"]:
   genModel(args)
 
-if args["jester:route"]:
-  genRoute(args)
-
 if args["jester:controller"]:
   genController(args)
 

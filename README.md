@@ -2,6 +2,7 @@ Generator
 ----------------------------------------------
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](./LICENSE.txt)
 [![Build Status](https://travis-ci.org/Adeohluwa/gen.svg?branch=master)](https://travis-ci.org/Adeohluwa/gen)
+![Activity](https://img.shields.io/github/commit-activity/m/adeohluwa/gen?style=flat-square)
 
 <img src="usage.png" width="640" height="480"/>
 

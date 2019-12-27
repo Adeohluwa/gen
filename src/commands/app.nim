@@ -114,7 +114,7 @@ wechat: xyz
 )
 
 
-let runApp = () => discard execShellCmd "nimble run app"
+proc runApp() = discard execShellCmd "nimble run app"
 
 
 #let feedBack = () => ""

@@ -10,6 +10,16 @@ import progress
 
 
 
+
+# MVC folder
+let mvcDir = @["src/models", "src/routes", "src/views", "src/controllers"]
+let pubDir = @[ "src/public/img", "src/public/css", "src/public/js"]
+let testDir = @[&"tests"]
+let allDirs = mvcDir & pubDir & testDir
+
+
+
+
 let nimbleFile = () => writeFile(
 "app.nimble",
 """
@@ -104,6 +114,11 @@ wechat: xyz
 )
 
 
+let runApp = () => discard execShellCmd "nimble run app"
+
+
+#let feedBack = () => ""
+
 
 
 
@@ -115,13 +130,6 @@ proc genApp*(args: Table[system.string, docopt.Value]) =
   for project in @(args["<project>"]):
 
     blue(&"Generating folder structure for {project}...")
-   
-    # MVC folder
-    let mvcDir = @["src/models", "src/routes", "src/views", "src/controllers"]
-    let pubDir = @[ "src/public/img", "src/public/css", "src/public/js"]
-    let testDir = @[&"tests"]
-    let allDirs = mvcDir & pubDir & testDir
-
 
     # start new progress bar
     var bar = newProgressBar()
@@ -137,10 +145,11 @@ proc genApp*(args: Table[system.string, docopt.Value]) =
       bar.increment()
     bar.finish()
     
+    
     setCurrentDir(&"{project}")
     nimbleFile() 
     helloWorld()
     readMe()
-    discard execShellCmd "nimble run app"
-    
+    runApp()
+    #feedBack()
 

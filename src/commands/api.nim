@@ -121,9 +121,9 @@ proc runApp() = discard execShellCmd "nimble run app"
 
 
 proc genAPI*(args: Table[system.string, docopt.Value]) =
-  for project in @(args["<project>"]):
+  for api in @(args["<api>"]):
 
-    blue(&"Generating API structure for {project}...")
+    blue(&"Generating API structure for {api}...")
 
     # start new progress bar
     var bar = newProgressBar()

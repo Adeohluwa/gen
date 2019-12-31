@@ -57,9 +57,6 @@ if args["jester:controller"]:
 if args["jester:test"]:
   genTest(args)
 
-if args["new:dockerfile"]:
-  genDocker()
-
 if args["new:license"]:
   genLicense(args)
 

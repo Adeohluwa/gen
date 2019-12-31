@@ -131,7 +131,7 @@ proc genAPI*(args: Table[system.string, docopt.Value]) =
    
     # create directories
     for eachDir in allDirs:
-      createDir &"{project}/{eachDir}"
+      createDir &"{api}/{eachDir}"
      
     
     for i in 1..100:  
@@ -140,7 +140,7 @@ proc genAPI*(args: Table[system.string, docopt.Value]) =
     bar.finish()
     
     
-    setCurrentDir(&"{project}")
+    setCurrentDir(&"{api}")
     nimbleFile() 
     splitRoute()
     sampleRoute()

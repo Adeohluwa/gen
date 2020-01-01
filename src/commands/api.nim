@@ -58,15 +58,19 @@ let sampleRoute = () => writeFile(
 "src/routes/api.nim",
 """
 import jester
-import "../models/models.nim"
+#import "../models/<your-model>.nim"
 
 router endPoints:
   # get user details
   get "/user":
     resp "works"
   
-  # create a new product
-  post "/product/create":
+  # create a new user
+  post "/user/new":
+    resp "works"
+ 
+ # get product details
+  get "/product/":
     resp "works"
 """
 )

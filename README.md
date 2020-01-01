@@ -73,7 +73,7 @@ ROADMAP
  - [x] Generate Models
  - [x] Generate Controllers
  - [x] Quickly Scaffold Tests
- - [ ] Generate API
+ - [x] Generate API
  - [ ] Scaffold GUI Apps
  - [ ] Scaffold CLI Apps
  

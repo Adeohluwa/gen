@@ -35,7 +35,7 @@ let args = docopt(
 doc,
 version = """
 Gen ©2019 
-Version: 1.0.0
+Version: 1.2.0
 Desc: Scaffolding tool for GUI/Web/CLI Apps
 Author: Adeoluwa Adejumo
 """)

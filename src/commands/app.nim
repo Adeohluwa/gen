@@ -114,11 +114,23 @@ wechat: xyz
 )
 
 
-proc runApp() = discard execShellCmd "nimble run app"
+proc runApp() = discard execShellCmd "nimble run app > log.txt"
 
 
-#let feedBack = () => ""
+let feedBack = () => echo """
+✔️ Created Models folder... 
+✔️ Created Views folder... 
+✔️ Created Controllers folder...
+✔️ Created Routes folder... 
+✔️ Created Tests folder... 
+✔️ Created .nimble file... 
+✔️ Running App......................... 
 
+Framework: Jester
+Url: http://0.0.0.0
+Port: 5000
+Threads: 1
+"""
 
 
 
@@ -150,6 +162,5 @@ proc genApp*(args: Table[system.string, docopt.Value]) =
     nimbleFile() 
     helloWorld()
     readMe()
+    feedBack()
     runApp()
-    #feedBack()
-

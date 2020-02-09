@@ -66,6 +66,7 @@ let dotGitignore = () => writeFile(
 ".gitignore",
 """
 .env
+log.txt
 bin/
 src/models/<yourmodel>
 """

@@ -36,6 +36,10 @@ requires "nim >= 1.0.2", "jester", "norm >= 1.0.16", "dotenv >= 1.1.1"
 task createdb, "Create DB tables from user defined types":
   exec "nim c -r src/models/models.nim"
   rmFile "src/models/models".toExe()
+task testApi,"run tests":
+  exec("nimble build") #recompile
+  selfExec("c -r tests/runTests.nim")
+  rmFile("tests/runTests".toExe())
 """
 )
 

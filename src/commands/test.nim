@@ -7,6 +7,7 @@ import strutils
 import fab
 import docopt
 import sequtils
+import common
 
 
 
@@ -40,5 +41,7 @@ proc genTest*(args: Table[system.string, docopt.Value]) =
       let url = each.findAll(re(r"/.+"))[0].replace(":","")
       buildUp.add(&"\n\n\n  test \"{url}:\n      check:  client.{reqMethod}(\"{url}) == Http500") 
 
-
     writeFile("tRoutes.nim",buildUp)
+ 
+  const runTests = staticRead("../../resources/runTests.nim")
+  writeFile("tests/runTests.nim",runTests.format("name",getProjectName()))

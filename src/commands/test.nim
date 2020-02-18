@@ -6,6 +6,7 @@ import strformat
 import strutils
 import fab
 import docopt
+import sequtils
 
 
 
@@ -29,7 +30,9 @@ proc genTest*(args: Table[system.string, docopt.Value]) =
   for filename in @(args["<file>"]):
 
     let pattern = rex(r"get.+ | post.+ | put.+ | patch.+ |delete.+ ")
-    let contents = readFile(filename)
+    let lines = readFile(filename).splitLines()
+    let filteredLines = lines.filter(x =>  x.strip.len != 0 and x.strip[0] != '#') # remove comments
+    let contents = filteredLines.join("\n")
     let matchObjects = contents.findAll(pattern)
 
     for each in matchObjects:

@@ -19,9 +19,9 @@ let allDirs = mvcDir & testDir
 
 
 
-let nimbleFile = () => writeFile(
-"app.nimble",
-"""
+let nimbleFile = (name: string) => writeFile(
+&"{name}.nimble",
+&"""
 # Package
 version       = "1.0.3"
 author        = "Adeoluwa Adejumo"
@@ -29,7 +29,7 @@ description   = "Sample Web App"
 license       = "MIT"
 srcDir        = "src"
 binDir        = "bin"
-bin           = @["app"]
+bin           = @["{name}"]
 # Dependencies
 requires "nim >= 1.0.2", "jester", "norm >= 1.0.16", "dotenv >= 1.1.1"
 # Tasks
@@ -40,8 +40,8 @@ task createdb, "Create DB tables from user defined types":
 )
 
 
-let splitRoute = () => writeFile(
-"src/app.nim",
+let splitRoute = (name: string) => writeFile(
+&"src/{name}.nim",
 """
 import jester
 import routes/api
@@ -76,12 +76,12 @@ router endPoints:
 )
 
 
-let readMe = () => writeFile(
+let readMe = (name: string) => writeFile(
 "README.md",
-"""
-# Project Name
+&"""
+# {name}
 <!-- Don't forget to add your badges (License, CI, Code coverage) -->
-Project name is a <utility/tool/feature> that allows <insert_target_audience> to do <action/task_it_does>.
+{name} is a <utility/tool/feature> that allows <insert_target_audience> to do <action/task_it_does>.
 <!-- GIF Demo / Screenshot here -->
 Additional line of information text about what the project does. Your introduction should be around 2 or 3 sentences. Don't go overboard, people won't read it.
 ## Features
@@ -89,16 +89,16 @@ Additional line of information text about what the project does. Your introducti
 [x] Feature 2 
 [ ] Feature 3
 ## Installation
-Use the package manager [nimble](https://pip.pypa.io/en/stable/) to install foobar.
+Use the package manager [nimble](https://pip.pypa.io/en/stable/) to install {name}.
 ```bash
-nimble install foobar
+nimble install {name}
 ```
 ## Usage
 ```nim
-import foobar
-foobar.pluralize('word') # returns 'words'
-foobar.pluralize('goose') # returns 'geese'
-foobar.singularize('phenomena') # returns 'phenomenon'
+import {name}
+{name}.pluralize('word') # returns 'words'
+{name}.pluralize('goose') # returns 'geese'
+{name}.singularize('phenomena') # returns 'phenomenon'
 ```
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
@@ -112,7 +112,7 @@ wechat: xyz
 )
 
 
-proc runApp() = discard execShellCmd "nimble run app"
+proc runApp(name: string) = discard execShellCmd &"nimble run {name}"
 
 
 #let feedBack = () => ""
@@ -130,13 +130,12 @@ proc genAPI*(args: Table[system.string, docopt.Value]) =
     blue(&"Generating API structure for {api}...")
 
     # start new progress bar
-    var bar = newProgressBar()
+    var bar = newProgressBar(step=20)
     bar.start()
    
     # create directories
     for eachDir in allDirs:
       createDir &"{api}/{eachDir}"
-     
     
     for i in 1..100:  
       sleep(30)
@@ -145,9 +144,9 @@ proc genAPI*(args: Table[system.string, docopt.Value]) =
     
     
     setCurrentDir(&"{api}")
-    nimbleFile() 
-    splitRoute()
+    nimbleFile($api)
+    splitRoute($api)
     sampleRoute()
-    readMe()
-    runApp()
+    readMe($api)
+    runApp($api)
     #feedBack()

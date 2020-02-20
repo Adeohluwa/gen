@@ -20,9 +20,9 @@ let allDirs = mvcDir & pubDir & testDir
 
 
 
-let nimbleFile = () => writeFile(
-"app.nimble",
-"""
+let nimbleFile = (name: string) => writeFile(
+&"{name}.nimble",
+&"""
 # Package
 
 version       = "1.0.3"
@@ -31,7 +31,7 @@ description   = "Sample Web App"
 license       = "MIT"
 srcDir        = "src"
 binDir        = "bin"
-bin           = @["app"]
+bin           = @["{name}"]
 
 
 # Dependencies
@@ -47,8 +47,8 @@ task createdb, "Create DB tables from user defined types":
 )
 
 
-let helloWorld = () => writeFile(
-"src/app.nim",
+let helloWorld = (name: string) => writeFile(
+&"src/{name}.nim",
 """
 import jester
 
@@ -61,14 +61,14 @@ runForever()
 )
 
 
-let readMe = () => writeFile(
+let readMe = (name: string) => writeFile(
 "README.md",
-"""
-# Project Name
+&"""
+# {name}
 
 <!-- Don't forget to add your badges (License, CI, Code coverage) -->
 
-Project name is a <utility/tool/feature> that allows <insert_target_audience> to do <action/task_it_does>.
+{name} is a <utility/tool/feature> that allows <insert_target_audience> to do <action/task_it_does>.
 
 <!-- GIF Demo / Screenshot here -->
 
@@ -83,20 +83,20 @@ Additional line of information text about what the project does. Your introducti
 
 ## Installation
 
-Use the package manager [nimble](https://pip.pypa.io/en/stable/) to install foobar.
+Use the package manager [nimble](https://pip.pypa.io/en/stable/) to install {name}.
 
 ```bash
-nimble install foobar
+nimble install {name}
 ```
 
 ## Usage
 
 ```nim
-import foobar
+import {name}
 
-foobar.pluralize('word') # returns 'words'
-foobar.pluralize('goose') # returns 'geese'
-foobar.singularize('phenomena') # returns 'phenomenon'
+{name}.pluralize('word') # returns 'words'
+{name}.pluralize('goose') # returns 'geese'
+{name}.singularize('phenomena') # returns 'phenomenon'
 ```
 
 ## Contributing
@@ -114,7 +114,7 @@ wechat: xyz
 )
 
 
-proc runApp() = discard execShellCmd "nimble run app > log.txt"
+proc runApp(name: string) = discard execShellCmd &"nimble run {name} > log.txt"
 
 
 let feedBack = () => echo """
@@ -159,8 +159,8 @@ proc genApp*(args: Table[system.string, docopt.Value]) =
     
     
     setCurrentDir(&"{project}")
-    nimbleFile() 
-    helloWorld()
-    readMe()
+    nimbleFile($project) 
+    helloWorld($project)
+    readMe($project)
     feedBack()
-    runApp()
+    runApp($project)

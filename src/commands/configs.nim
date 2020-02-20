@@ -4,6 +4,7 @@ import strformat
 import strutils
 import fab
 import docopt
+import common
 
 
 
@@ -17,9 +18,9 @@ let dotNim = () => writeFile(
 )
 
 
-let dotTravis = () => writeFile(
+let dotTravis = (name: string) => writeFile(
 ".travis.yml",
-"""
+&"""
 os:
   - linux
 dist: trusty
@@ -43,7 +44,7 @@ before_script:
 
 script:
   #library - nimble install -y
-  #app - nimble run app
+  #app - nimble run {name}
 
 notifications:
   email: false # noisy
@@ -77,8 +78,9 @@ src/models/<yourmodel>
 
 
 proc genConfigs*() =
+  let name = getProjectName()
   dotNim()
-  dotTravis()
+  dotTravis(name)
   dotEnv()
   dotGitignore()
 
